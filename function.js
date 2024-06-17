@@ -52,18 +52,22 @@ console.log(findMaxFrequencyChar(number));
 // least once. Punctuation and case are typically ignored. For example, the
 // string "The quick brown fox jumps over the lazy dog" is a pangram, while
 // "Hello, world!" is not.
-const checkIfPangram =()=> {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    const sentence = new Set(sentence.toLowerCase());
-    for (let char of alphabet) {
-        if (!sentence.has(char)) {
+const checkIfPangram=(sentence)=> {
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    var lowerCaseSentence = sentence.toLowerCase();
+    var sentenceSet = new Set(lowerCaseSentence);
+
+    for (var char of alphabet) {
+        if (!sentenceSet.has(char)) {
             return false;
         }
     }
     return true;
-};
+}
+
 console.log(checkIfPangram("Hello, world!")); 
-console.log(checkIfPangram("The quick brown fox jumps over the lazy dog"));
+console.log(checkIfPangram("The quick brown fox jumps over the lazy dog")); 
+
 
 
 // 5. Design a function that takes a list of integers as input. The function should
